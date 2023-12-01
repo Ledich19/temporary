@@ -1,0 +1,113 @@
+$sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
+
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+
+#popular-categories {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow-x: auto;
+
+  //scroll
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #f1f1f1;
+
+  @include media("max", "md") {
+    justify-content: start;
+    gap: 7px;
+  }
+
+}
+#popular-categories::-webkit-scrollbar {
+  width: 2px;
+  height: 0;
+  border-radius: 50%;
+}
+#popular-categories::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+#popular-categories::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--color-stroke);
+}
+#popular-categories::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+#popular-categories .category-item-container {
+  position: relative;
+}
+
+.popular-categories {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 5px;
+}
+
+.inner-img {
+  outline: var(--color-placeholder) 3.5px solid;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include media("max", "md") {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+.category-item-container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: fit-content;
+}
+
+.wrapper-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.category-title {
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--color-placeholder);
+}
+
+.error-message {
+  color: var(--color-error);
+  background-color: var(--color-background);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid var(--color-error);
+}
+
