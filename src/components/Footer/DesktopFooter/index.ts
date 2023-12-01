@@ -1,1 +1,0 @@
-export {DesktopFooter} from "./DesktopFooter";
