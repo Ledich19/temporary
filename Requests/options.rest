@@ -1,0 +1,5 @@
+GET https://beautyshop.fly.dev/api/v1/options/
+Content-Type: application/json
+###
+DELETE https://beautyshop.fly.dev/api/v1/options/a0d00c06-46a2-4938-a34c-1177f9dc0c1a/
+Content-Type: application/json
