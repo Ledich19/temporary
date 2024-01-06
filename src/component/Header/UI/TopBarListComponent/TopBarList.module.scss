@@ -1,0 +1,18 @@
+    .list-top-bar-header {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        li {
+          margin: auto;
+        }
+      }
+
+    }

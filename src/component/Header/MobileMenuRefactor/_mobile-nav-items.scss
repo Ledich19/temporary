@@ -1,0 +1,25 @@
+.mobile-nav-items,
+.mobile-nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-items {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  max-width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
+  & .user-cart {
+    border-top: 1px solid var(--color-placeholder);
+  }
+}
+
+.mobile-nav-item {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

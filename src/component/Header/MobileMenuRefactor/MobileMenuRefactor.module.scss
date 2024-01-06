@@ -1,0 +1,125 @@
+@import "user-actions-header";
+@import "mobile-nav-items";
+@import "categories";
+#navbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+  background: white;
+  z-index: 10000;
+  border-bottom: 1px solid ;
+  height: fit-content;
+  @media (min-width: 768px) {
+    display: none;
+  }
+  a{
+    color: var(--color-text);
+  }
+  .nav-wrapper {
+    min-height: 60px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    .nav-actions {
+      position: relative;
+      z-index: -1;
+      min-width: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  height: 100vh;
+  background: white;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.stripe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 3px;
+  background-color: var(--color-placeholder);
+  border-radius: 5px;
+  position: fixed;
+  bottom: 1.5rem;
+  left: 121px;
+  cursor: grab;
+  z-index: 10;
+}
+
+.stripe:hover {
+  cursor: grabbing;
+}
+
+.stripe.hidden {
+  display: none;
+}
+
+#toggle-button {
+  display: none;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  background: transparent;
+  @media (max-width: 767px) {
+    & {
+      display: block;
+    }
+  }
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
